@@ -1,0 +1,35 @@
+<div class="home">
+    <!-- <select hidden>
+        <option *ngFor="let cidade of cidades" [value]="cidade?.value">{{ cidade?.nome }}</option>
+    </select> -->
+
+    <div class="data">
+        {{ retornoAPI.current_weather.time | date: 'dd/MM/yyyy' }}
+    </div>
+    <div class="detalhe">
+        <img [src]="ICONES[iconDesc.icon]">
+        <!-- <div class="icone">
+            {{ ICONES[iconDesc.icon] }}
+        </div> -->
+        <div class="temperatura">
+            {{ retornoAPI.current_weather.temperature | number:'1.0-0'}}º
+        </div>
+        <span>{{iconDesc.desc}}</span>
+    </div>
+    <div class="proximosdias">
+        <ng-container *ngFor="let data of retornoAPI.daily.time; index as i">
+            <div *ngIf="i > 0 && i < 4" class="dia">
+                <div class="data">
+                    {{ data | date: 'EEE, dd' }}
+                </div>
+                <img [src]="ICONES[calculaIntencidadeTemperaturaWMO(retornoAPI.daily.weathercode[i]).icon]">
+                <div class="temperatura">
+                    <div class="max">Max: {{retornoAPI.daily.temperature_2m_max[i] | number:'1.0-0'}}º</div>/<div class="min">{{retornoAPI.daily.temperature_2m_min[i] | number:'1.0-0'}}º :Min</div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="cidade">
+        {{ currentCity.nome }}
+    </div>
+</div>

@@ -1,0 +1,80 @@
+@use "../../../variables" as *;
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $size-padding-3;
+
+    .detalhe {
+        text-align: center;
+        margin: $size-padding-3*2;
+
+        img {
+            width: 15em;
+            height: 15em;
+        }
+        .temperatura {
+            font-size: 7em;
+            text-align: center;
+            font-weight: bold;
+        }
+        span {
+            text-align: center;
+            min-width: 200px;
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
+
+    .data,
+    .cidade {
+        text-align: center;
+        min-width: 200px;
+        display: block;
+        font-size: 1.5em;
+        color: $color-text-secundary;
+    }
+
+    .proximosdias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: $size-padding-2;
+        gap: $size-padding-1;
+
+        & .dia {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: $size-padding-1;
+
+            & .data {
+                font-weight: bold;
+            }
+
+            & img {
+                padding: $size-padding-2;
+            }
+
+            & .temperatura {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    }
+}

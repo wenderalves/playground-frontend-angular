@@ -1,0 +1,15 @@
+{
+  "name": "@playground/lib",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "test": "ng test"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
